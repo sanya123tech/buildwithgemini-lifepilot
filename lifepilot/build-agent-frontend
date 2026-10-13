@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "$DIR"
+
+echo "=========================================================="
+echo "  🚀 LifePilot AI — Building & Launching Frontend"
+echo "=========================================================="
+
+# Build frontend production bundle
+echo "Building React + Vite frontend bundle..."
+cd "$DIR/frontend"
+npm run build
+
+# Start LifePilot AI Command Center
+echo ""
+echo "Starting LifePilot AI Command Center on http://0.0.0.0:8000 ..."
+cd "$DIR"
+exec ./run.sh
